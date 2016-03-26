@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+{% if not all_workouts %}
+  <h2>No workouts to display yet...</h2>
+{% else %}
+  <div><h2>Choose a workout:</h2><div>
+  {% for item in all_workouts %}
+    <a href='{{ url_for('.workout_exercises', workout_id=item.id )}}'class='list-group-item text-center'><h4 class="list-group-item-title">{{item.wrkout_title}} - {{item.description}}</h4></a>
+  {% endfor %}
+{% endif%}
+{% endblock %}
