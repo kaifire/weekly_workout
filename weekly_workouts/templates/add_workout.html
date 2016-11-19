@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+<legend>Add a Workout</legend>
+<div id="workout_form">
+<form id="new-location-form" action="{{ url_for('.add_workout') }}" method="post">
+  <td id="workout_title">
+    <input type="text" name="workout_title" placeholder="Workout Name" maxlegth="50"/>
+  </td>
+  <td id="workout_description">
+    <input type="text" name="workout_description" placeholder="Description">
+  </td>
+  <td style='text-align: center'>
+    <button type="submit" id="submit_new_item" class="btn btn-primary create-btn">Add</button>
+  </td>
+</form>
+</div>
+<div id="workout_list">
+  {% for workout in all_workouts %}
+    <ul>{{ workout.wrkout_title }}</ul>
+  {% endfor %}
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+  formAction("{{ url_for('.add_workout') }}");
+});
+</script>
+{% endblock %}

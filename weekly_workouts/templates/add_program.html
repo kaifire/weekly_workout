@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+<legend>Add a Program</legend>
+<form id="new-location-form" action="{{ url_for('.add_program',resource='locations') }}" method="post">
+	<td id="workouts">
+		<select name='workout_list' width="600px">
+			{% for workout in workout_list %}
+				<option name="{{ workout.wrkout_title }}">{{ workout.wrkout_title }}</option>
+		  {% endfor %}
+		</select>
+	</td>
+	<td id="exercises">
+		<select name='exercise_list' width="600px">
+			{% for exercise in exercise_list %}
+				<option name="{{ exercise.exercise_name }}">hi</option>
+		  {% endfor %}
+		</select>
+	</td>
+  <td id="sets">
+    <input type="number" name="number_of_sets" placeholder="# of Sets" min="1">
+  </td>
+  <td id="reps">
+    <input type="number" name="number_of_reps" placeholder="# of Reps" min="1"/>
+  </td>
+  <td style='text-align: center'>
+    <button type="submit" id="submit_new_item" class="btn btn-primary create-btn">Add</button>
+  </td>
+</form>
+<div>
+</div>
+{% endblock %}

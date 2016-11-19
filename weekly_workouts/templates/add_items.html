@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Create Workout Programs!</h1>
+<div class='list-group'>
+    <a href='{{ url_for('add_workout') }}' class='list-group-item text-center' id='create'>Add a Workout</a>
+    <a href='{{ url_for('add_exercise') }}' class='list-group-item text-center' id='create'>Add an Exercise</a>
+    <a href='{{ url_for('add_program') }}' class='list-group-item text-center' id='create'>Add a Workout Program</a>        
+</div>
+{% endblock %}

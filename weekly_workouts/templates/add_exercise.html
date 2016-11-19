@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+<legend>Add an Exercise</legend>
+<form id="new-location-form" action="{{ url_for('.add_exercise',resource='locations') }}" method="post">
+  <td id="exercise_name">
+    <input type="text" name="exercise_name" placeholder="Exercise Name" maxlegth="50"/>
+  </td>
+  <td id="exercise_description">
+    <input type="text" name="exercise_description" placeholder="Description">
+  </td>
+  <td style='text-align: center'>
+    <button type="submit" id="submit_new_item" class="btn btn-primary create-btn">Add</button>
+  </td>
+</form>
+{% endblock %}

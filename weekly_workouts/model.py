@@ -1,4 +1,4 @@
-from app import db
+from weekly_workouts import db
 from datetime import datetime
 from sqlalchemy.orm import relationship
 from sqlalchemy.pool import Pool
@@ -16,8 +16,13 @@ class Workout(db.Model):
   created_on = Column(DateTime, default=datetime.utcnow)
   modified_on = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
-  def __repr__(self):
-    return '<User %r>' % (self.wrkout_title)
+  def __init__(self, id, workout_title, description):
+    self.id = id
+    self.wrkout_title = workout_title
+    self.description = description
+
+  # def __repr__(self):
+  #   return '{0}'.format(self.wrkout_title)
 
 class Exercises(db.Model):
   __tablename__ = 'exercises'

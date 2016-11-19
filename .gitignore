@@ -19,3 +19,4 @@
 /config/
 /dist/
 TEST-*.xml
+.DS_Store
