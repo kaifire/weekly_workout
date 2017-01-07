@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from flask.ext.sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 from flask_restplus import Api
 
 app = Flask(__name__)

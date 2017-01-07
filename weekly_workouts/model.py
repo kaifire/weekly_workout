@@ -32,6 +32,11 @@ class Exercises(db.Model):
   created_on = Column(DateTime, default=datetime.utcnow)
   modified_on = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
+  def __init__(self, id, exercise_name, description):
+      self.id = id
+      self.exercise_name = exercise_name
+      self.description = description
+
 class Workout_Exercises(db.Model):
   __tablename__ = 'workout_exercises'
   id = Column(Integer, primary_key=True)
@@ -45,3 +50,14 @@ class Workout_Exercises(db.Model):
   notes = Column(String(2048), nullable=True)
   created_on = Column(DateTime, default=datetime.utcnow)
   modified_on = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+  def __init__(self, id, exercise_id, workout_id, day, week, circuit, reps, sets, notes):
+    self.id = id
+    self.exercise_id = exercise_id
+    self.workout_id = workout_id
+    self.day = day
+    self.week = week
+    self.circuit = circuit
+    self.reps = reps
+    self.sets = sets
+    self.notes = notes
